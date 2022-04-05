@@ -12,12 +12,19 @@ require('hardhat-contract-sizer');
  */
  module.exports = {
    solidity: {
-     version: "0.8.0",
+     version: "0.8.6",
      settings: {
-       optimizer: {
-         enabled: true,
-         runs: 1000,
-       }
+      optimizer: {
+        enabled: true,
+        runs: 2000,
+        details: {
+          yul: true,
+          yulDetails: {
+            stackAllocation: true,
+            optimizerSteps: "dhfoDgvulfnTUtnIf"
+          }
+        }
+      }
      }
    },
    networks: {
@@ -33,13 +40,25 @@ require('hardhat-contract-sizer');
        // gas: 35000000, // per gas used when deployed in test 
        // gasPrice: 90000000000, // 70 gwei (current cost in eth station)
      },
+     matic: {
+       url: process.env.POLYGON_RPC_URL || "",
+       accounts: process.env.PRIVATE_KEY2 !== undefined ? [process.env.PRIVATE_KEY2] : [],
+       // gas: 35000000, // per gas used when deployed in test 
+       // gasPrice: 90000000000, // 70 gwei (current cost in eth station)
+     },
+     mumbai: {
+       url: process.env.POLYGON_MUMBAI_RPC_URL || "",
+       accounts: process.env.PRIVATE_KEY2 !== undefined ? [process.env.PRIVATE_KEY2] : [],
+       // gas: 35000000, // per gas used when deployed in test 
+       // gasPrice: 90000000000, // 70 gwei (current cost in eth station)
+     },
    },
    gasReporter: {
      enabled: process.env.REPORT_GAS !== undefined,
      currency: "USD",
    },
    etherscan: {
-     apiKey: process.env.ETHERSCAN_API_KEY,
+     apiKey: process.env.POLYGONSCAN_API_KEY,
    },
    mocha: {
      timeout: 100000

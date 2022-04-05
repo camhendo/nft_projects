@@ -1,20 +1,25 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// When running the script with `npx hardhat run <script>` you'll find the Hardhat
-// Runtime Environment's members available in the global scope.
-const hre = require("hardhat");
+let { networkConfig, getNetworkIdFromName } = require('../helper-hardhat-config')
+const fs = require('fs')
+const hre = require("hardhat")
 
 async function main() {
   const [deployer] = await ethers.getSigners()
   console.log("Deploying contracts with the account:",deployer.address)
-  const HeartsNFT = await hre.ethers.getContractFactory("HeartsNFT")
+  const svgComponents = await ethers.getContractFactory('svgComponents')
+  const svgLib = await svgComponents.deploy()
+  console.log('library deployed')
+  
+  const Egg = await hre.ethers.getContractFactory("Egg", {
+          libraries: {
+              svgComponents: svgLib.address
+          }
+      })
   console.log('got contract')
-  const heartsNFT = await HeartsNFT.deploy()
+  const egg = await Egg.deploy()
   console.log('deployed?')
-  await heartsNFT.deployed()
-  console.log("HeartsNFT deployed to:", heartsNFT.address);
-  console.log(`Verify with:\n npx hardhat verify --network rinkeby ${heartsNFT.address}`)
+  await egg.deployed()
+  console.log("EggNFT deployed to:", egg.address)
+  console.log(`Verify with:\n npx hardhat verify --network mumbai ${egg.address}`)
 }
 
 // We recommend this pattern to be able to use async/await everywhere
