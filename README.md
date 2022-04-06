@@ -43,9 +43,9 @@ But this [tutourial](https://www.youtube.com/watch?v=9oERTH9Bkw0) by Patrick Col
 
 ## EggNFT
 
-[Polygonscan](https://polygonscan.com/address/0x69B3AeB618aEdd3d807Afb351101916cC75C8cF1) - for minting new Eggs and reading/writing to the contract
+[Polygonscan](https://polygonscan.com/address/0x2eb0e66C9D3f38fbA4Ad883e81d48221C9740ff0) - for minting new Eggs and reading/writing to the contract
 
-[Opensea](https://opensea.io/collection/eggo)
+[Opensea](https://opensea.io/collection/thisisegg)
 
 ## How to Mint EggNFT
 

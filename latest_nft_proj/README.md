@@ -6,17 +6,17 @@ Send one to a friend, compare patterns, and more. Egg ownership will give utilit
 
 Each egg is combination of patterns, colors, and designs that are compiled into one SVG file. No IPFS, and unlimited mints available. The only limiter is the time left to mint. 
 
-[Polygonscan](https://polygonscan.com/address/0x69B3AeB618aEdd3d807Afb351101916cC75C8cF1)
+[Polygonscan](https://polygonscan.com/address/0x2eb0e66C9D3f38fbA4Ad883e81d48221C9740ff0)
 
-[Opensea](https://opensea.io/collection/eggo)
+[Opensea](https://opensea.io/collection/thisisegg)
 
-## Creating an Eggo
+## Creating an Egg
 
 As I don't have the exact knowledge to create a reactJS webapp as of this moment for letting you easily mint with one click. Here is how it workds. 
 
-1. Go to the contract on [polygonscan](https://polygonscan.com/address/0x69B3AeB618aEdd3d807Afb351101916cC75C8cF1) - if you're skeptical about the link here. This is the contract address: 0x69B3AeB618aEdd3d807Afb351101916cC75C8cF1 (you can verify this is true via the opensea collection page)
+1. Go to the contract on [polygonscan](https://polygonscan.com/address/0x2eb0e66C9D3f38fbA4Ad883e81d48221C9740ff0) - if you're skeptical about the link here. This is the contract address: 0x2eb0e66C9D3f38fbA4Ad883e81d48221C9740ff0 (you can verify this is true via the opensea collection page)
 
-2. Scroll down to the contract tab, and then select 'Write Contract' (or use this [link](https://polygonscan.com/address/0x69B3AeB618aEdd3d807Afb351101916cC75C8cF1#writeContract)). 
+2. Scroll down to the contract tab, and then select 'Write Contract' (or use this [link](https://polygonscan.com/address/0x2eb0e66C9D3f38fbA4Ad883e81d48221C9740ff0#writeContract)). 
 
 3. Click "Connect to Web3" and sign the transaction with your respective walled (for most, this is MetaMask)
 

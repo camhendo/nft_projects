@@ -136,7 +136,7 @@ contract Egg is ERC721URIStorage, Ownable {
             } else if (eggo[0].choices[0] == 4) {
                 string[10] memory wavs = ['40','42','44','46','48','50','52','54','56','58'];
                 for (uint i = 0; i<10; i++) {
-                    eggo[0].svg = addString(eggo[0].svg,'<use x="-100"y="-',wavs[i],'0px" class="s2" stroke-width="5" fill="none" transform="scale(1.8)rotate(85)" href="#wav"/>');
+                    eggo[0].svg = addString(eggo[0].svg,'<use x="-100" y="-',wavs[i],'0px" class="s2" stroke-width="5" fill="none" transform="scale(1.8)rotate(85)" href="#wav"/>');
                 }
             } else if (eggo[0].choices[0] == 5) {
                 eggo[0].svg= string(abi.encodePacked(eggo[0].svg,pU,' transform="rotate(10)" fill="url(#p4)"></rect>'));
@@ -173,7 +173,7 @@ contract Egg is ERC721URIStorage, Ownable {
         } else if (eggo[0].choices[2] == 2) {
             eggo[0].svg = string(abi.encodePacked(eggo[0].svg,'<use x="80" y="-100" class="m" transform="scale(0.8)" href="#d3"/>'));
         } else if (eggo[0].choices[2] == 3) {
-            eggo[0].svg = string(abi.encodePacked(eggo[0].svg,'<use href="#wav" x="-45" y="-150" class="s1" stroke-width="20" fill="none" transform="scale(1.2)"/>'));
+            eggo[0].svg = string(abi.encodePacked(eggo[0].svg,'<use href="#wav" x="-45" y="-150" class="s2" stroke-width="20" fill="none" transform="scale(1.2)"/>'));
         } else if (eggo[0].choices[2] == 4) {
             eggo[0].svg = string(abi.encodePacked(eggo[0].svg,'<use href="#d5" x="-135" y="-8" class="m" transform="rotate(12) skewX(-10)" transform-origin="center"/><use href="#d5" y="-20" class="m" transform="scale(1,1.1)" transform-origin="center"/><use href="#d5" x="135" y="-8" class="m" transform="rotate(-12) skewX(10)" transform-origin="center"/>'));
         }
@@ -187,7 +187,7 @@ contract Egg is ERC721URIStorage, Ownable {
         } else if (eggo[0].choices[3] == 2) {
             eggo[0].svg = string(abi.encodePacked(eggo[0].svg,'<use x="-510" y="-50" class="t" transform="rotate(-90)" href="#d3"/><use x="50" y="-550" class="t" transform="rotate(90)" href="#d3"/>'));
         } else if (eggo[0].choices[3] == 3) {
-            eggo[0].svg = string(abi.encodePacked(eggo[0].svg,'<use href="#wav" x="-45" y="-150" class="s2" stroke-width="20" fill="none" transform="scale(1.2)"/>'));
+            eggo[0].svg = string(abi.encodePacked(eggo[0].svg,'<use href="#wav" x="25" y="-250" class="s1" stroke-width="5" fill="none" transform="scale(.9)"/>'));
         } else if (eggo[0].choices[3] == 4) {
             eggo[0].svg = string(abi.encodePacked(eggo[0].svg,'<use href="#d5" y="-265" class="t" transform="scale(1.4,.8)" transform-origin="center"/>'));
         } 
@@ -213,10 +213,10 @@ library svgComponents {
             }
             if (i == 2) {
                 color[0] = eggColors[tempNum%18];
-                colors[0] = string(abi.encodePacked('<radialGradient id="gd" cx="0.54" cy="0.75" fx="0.60" fy="0.80" spreadMethod="pad"><stop offset="0%" stop-color="',eggColors[tempNum%18]));
+                colors[0] = string(abi.encodePacked('<radialGradient id="gd" cx="0.54" cy="0.75" fx="0.60" fy="0.80" spreadMethod="pad"><stop offset="0%" stop-color="',eggColors[(tempNum+1)%18]));
             } else if (i == 3) {
                 color[1] = eggColors[tempNum%18];
-                colors[0] = string(abi.encodePacked(colors[0],'"/><stop offset="100%" stop-color="',eggColors[tempNum%18],'"/></radialGradient>'));
+                colors[0] = string(abi.encodePacked(colors[0],'"/><stop offset="100%" stop-color="',eggColors[(tempNum+1)%18],'"/></radialGradient>'));
             }
             if (i < 4) {
                 colors[1] = string(abi.encodePacked(colors[1],'"/><path d="M100 ',locs[i],'a500 300 0 0 0 600 0" stroke="',eggColors[tempNum % 18]));
